@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas canvas-id="myCanvas" class="myCanvas">
+</canvas>
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var imgData=ctx.createImageData(200,100);
+for (var i=0,t=255;i<imgData.data.length;i+=4)  //遍历ImageData对象的每一个像素点，并给它们上色
+{
+if(t<=0) t=255;
+imgData.data[i+0]=255-t;
+imgData.data[i+1]=t;
+imgData.data[i+2]=255-t;
+imgData.data[i+3]=255;
+--t;
+}
+ctx.putImageData(imgData,50,60);
+</script>
+</body>
+</html>

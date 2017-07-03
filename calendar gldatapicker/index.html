@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>glDatePicker 演示程序</title>
+    <link href='http://www.oschina.net/js/2013/glDatePicker/glDatePicker.default.css' rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src='http://www.oschina.net/js/2013/glDatePicker/glDatePicker.js'></script>
+</head>
+<body>
+<input type="text" id="example" />
+<script>
+    $(function(){
+        $(window).load(function() {
+            $('#example').glDatePicker({
+                showAlways : true,
+                format : 'yyyy-mm-dd'
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>WarICON Prefect</title>
+    <style>
+        #divBox
+        {
+            position: absolute;
+            overflow: hidden;
+            width: 64px;
+            height: 64px;
+            background: #000;
+        }
+
+        #divBox *
+        {
+            margin: 0;
+            position: absolute;
+        }
+
+        #divBox .mask
+        {
+            display: none;
+            overflow: hidden;
+            border: 32px solid #000001;
+
+            filter: alpha(opacity=60);
+            _filter: Chroma(color='black') alpha(opacity=60);
+            opacity: 0.6;
+        }
+
+        #divBox .layer0
+        {
+            height: 0px;
+            left: 32px;
+            top: -32px;
+
+            border-top: 32px solid transparent;
+            border-left: 0px solid transparent;
+        }
+
+        #divBox .layer1
+        {
+            width: 0px;
+            left: 32px;
+            top: 32px;
+
+            border-top: 0px solid transparent;
+            border-right: 32px solid transparent;
+        }
+
+        #divBox .layer2
+        {
+            left:-32px;
+            top: 32px;
+
+            border-bottom: 32px solid transparent;
+            border-right: 0px solid transparent;
+        }
+
+        #divBox .layer3
+        {
+            left: -32px;
+            top: -32px;
+
+            border-bottom: 0px solid transparent;
+            border-left: 32px solid transparent;
+        }
+    </style>
+</head>
+
+<body ondragstart="return false">
+<div id="divBox" style="left:10px; top:10px;">
+    <img id="divBGPic" src="images/Icon1.PNG" onmousedown="handleMouseDown()" style="left: 0px; top: 0px; width: 64px; height: 64px;">
+    <div class="mask layer0" style="display: none; width: 0px; height: 32px; border-left-width: 32px; border-bottom-width: 0px;"></div><div class="mask layer1" style="display: none; width: 32px; height: 0px; border-top-width: 32px; border-left-width: 0px;"></div><div class="mask layer2" style="display: none; width: 0px; height: 32px; border-right-width: 32px; border-top-width: 0px;"></div><div class="mask layer3" style="display: none; width: 32px; height: 0px; border-bottom-width: 32px; border-right-width: 0px;"></div></div>
+
+<script>
+    var $ = function(v){return document.getElementById(v)}
+
+
+    if (! ('pixelHeight' in document.body.style)) {
+        CSSStyleDeclaration.prototype.__defineSetter__("pixelHeight", function(v){this.height = v+"px";});
+        CSSStyleDeclaration.prototype.__defineSetter__("pixelWidth", function(v){this.width = v+"px";});
+        CSSStyleDeclaration.prototype.__defineSetter__("pixelTop", function(v){this.top = v+"px";});
+        CSSStyleDeclaration.prototype.__defineSetter__("pixelLeft", function(v){this.left = v+"px";});
+    }
+
+    try{document.execCommand("BackgroundImageCache", false, true)}catch(e){}
+</script>
+
+
+<script>
+    var styPic = $("divBGPic").style;
+    var arrMask = [];			//ֲ
+    var tickID;
+    var stage;
+    var inCD;
+
+
+    window.onload = function() {
+        var i,obj;
+
+        for (i = 0; i < 4; i++) {
+            obj = document.createElement("div");
+            obj.className = "mask layer" + i;
+            arrMask[i] = obj.style;
+
+            $("divBox").appendChild(obj);
+        }
+    };
+
+
+    function handleMouseDown() {
+        styPic.pixelLeft = 2;
+        styPic.pixelTop = 2;
+        styPic.pixelWidth = 60;
+        styPic.pixelHeight = 60;
+    }
+
+
+    document.onmouseup = function(e) {
+        styPic.pixelLeft = 0;
+        styPic.pixelTop = 0;
+        styPic.pixelWidth = 64;
+        styPic.pixelHeight = 64;
+
+        e = e || event;
+        e = e.srcElement || e.target;
+
+        if(e != $("divBGPic"))
+            return;
+
+        if(inCD)
+            return;
+        inCD = true;
+
+        tickID = 0;
+        stage = 0;
+        Reset();
+    };
+
+
+    function Draw() {
+        if (!inCD)
+            return;
+
+        var i = ++tickID;
+
+        switch(stage) {
+            case 0:
+                arrMask[0].borderLeftWidth = i + "px";
+                break;
+            case 1:
+                arrMask[0].pixelHeight = i;
+                arrMask[0].borderBottomWidth = (32-i) + "px";
+                break;
+            case 2:
+                arrMask[1].borderTopWidth = i + "px";
+                break;
+            case 3:
+                arrMask[1].pixelWidth = i;
+                arrMask[1].borderLeftWidth = (32-i) + "px";
+                break;
+            case 4:
+                arrMask[2].pixelWidth = 32 - i;
+                arrMask[2].borderRightWidth = i + "px";
+                break;
+            case 5:
+                arrMask[2].pixelHeight = i;
+                arrMask[2].borderTopWidth = (32-i) + "px";
+                break;
+            case 6:
+                arrMask[3].pixelHeight = 32 - i;
+                arrMask[3].borderBottomWidth = i + "px";
+                break;
+            case 7:
+                arrMask[3].pixelWidth = i;
+                arrMask[3].borderRightWidth = (32-i) + "px";
+                break;
+            case 8:
+                inCD = false;
+                for(i=0; i<4; i++)
+                    arrMask[i].display = "none";
+                break;
+        }
+
+        if (tickID == 32) {
+            tickID = 0;
+            stage++;
+        }
+    }
+
+    function Reset() {
+        for(var i = 0; i < 4; i++) {
+            arrMask[i].display = "block";
+        }
+
+        arrMask[0].pixelWidth = 0;
+        arrMask[0].pixelHeight = 0;
+        arrMask[0].borderLeftWidth = "0";
+        arrMask[0].borderBottomWidth = "32px";
+
+
+        arrMask[1].pixelWidth = 0;
+        arrMask[1].pixelHeight = 0;
+        arrMask[1].borderTopWidth = "0";
+        arrMask[1].borderLeftWidth = "32px";
+
+
+        arrMask[2].pixelWidth = 32;
+        arrMask[2].pixelHeight = 0;
+        arrMask[2].borderRightWidth = "0";
+        arrMask[2].borderTopWidth = "32px";
+
+        arrMask[3].pixelWidth = 0;
+        arrMask[3].pixelHeight = 32;
+        arrMask[3].borderBottomWidth = "0";
+        arrMask[3].borderRightWidth = "32px";
+    }
+
+
+
+    function RenderRoutine() {
+        // ...
+
+        Draw();
+    }
+
+    setInterval(RenderRoutine, 16);
+</script>
+
+
+</body></html>
