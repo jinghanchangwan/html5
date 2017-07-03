@@ -1,0 +1,144 @@
+<html><head>
+    <meta charset="gbk">
+    <title>新捷达 韧性游西藏</title>
+    <meta name="viewport" content="width=640,maximum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+
+        #musicBg{
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            z-index: 11;
+            top: 130px;
+            right: 30px;
+            background: url("http://rm.sina.com.cn/minisite/20170818jieda/resource/assets/ItemRenderer/music.png") no-repeat;
+        }
+
+        #musicBg.h{
+            background: url("http://rm.sina.com.cn/minisite/20170818jieda/resource/assets/ItemRenderer/music2.png") no-repeat;
+        }
+    </style>
+    <script type="text/javascript">
+        var ua = navigator.userAgent;
+        if(/Android (\d+\.\d+)/.test(ua)) {
+            var version = parseFloat(RegExp.$1);
+            if(version > 2.3) {
+                document.write('<meta name="viewport" content="width=640,  user-scalable=no,target-densitydpi=device-dpi,minimal-ui">');
+            } else {
+                document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+            }
+        } else {
+            document.write('<meta name="viewport" content="width=640,user-scalable=no, target-densitydpi=device-dpi,minimal-ui">');
+        }
+    </script><meta name="viewport" content="width=640,user-scalable=no, target-densitydpi=device-dpi,minimal-ui">
+    <script src="http://rm.sina.com.cn/minisite/20170417audia3/wap/Scripts/zepto.js"></script>
+</head>
+
+<body>
+
+<div id="musicBg"></div>
+<audio id="nidaye" class="" src="http://rm.sina.com.cn/minisite/20170818jieda/resource/assets/music.mp3" loop="" autoplay="autoplay" preload="auto"></audio>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+    $("#musicBg").click(function() {
+
+        $(this).toggleClass("h");
+        var $aud = document.getElementById('nidaye');
+
+        if($aud.paused) {
+            $aud.play();
+        } else {
+            $aud.pause();
+        }
+
+    });
+
+    $.ajax({
+        url: 'http://all.vic.sina.com.cn/201602weixin/interface/getToken.php?url=' + encodeURIComponent(window.location.href),
+        type: 'get',
+        dataType: "json",
+        success: function(data) {
+            if(data.errcode == 0) {
+                console.log(data);
+
+                //初始化wx sdk 配置
+                wx.config({
+                    debug: false,
+                    appId: data.appid,
+                    timestamp: data.timestamp,
+                    nonceStr: data.noncestr,
+                    signature: data.signature,
+                    jsApiList: [
+                        'checkJsApi',
+                        'onMenuShareTimeline',
+                        'onMenuShareAppMessage',
+                        'onMenuShareQQ',
+                        'onMenuShareWeibo',
+                        'hideMenuItems',
+                        'showMenuItems',
+                        'closeWindow'
+                    ]
+                });
+
+                //调用wx sdk 分享
+                wx.ready(function() {
+                    console.log(1);
+                    document.getElementById('nidaye').play();
+
+                    wx.onMenuShareTimeline({
+                        title: "新捷达 韧性游西藏",
+                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                        link: window.location.href,
+                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                        //分享成功、失败、用户取消及Menu菜单等回调函数有需求时请扩展
+                    });
+                    wx.onMenuShareQQ({
+                        title: "新捷达 韧性游西藏",
+                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                        link: window.location.href,
+                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                    });
+                    //朋友
+                    wx.onMenuShareAppMessage({
+                        title: "新捷达 韧性游西藏",
+                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                        link: window.location.href,
+                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                    });
+                    wx.onMenuShareWeibo({
+                        title: "新捷达 韧性游西藏",
+                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                        link: window.location.href,
+                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                    });
+                    console.log(2);
+
+                });
+
+            };
+        }
+    });
+</script>
+
+<iframe style="position: fixed;
+    width: 640px;
+    height: 100%;
+    border: none;" src="http://rm.sina.com.cn/minisite/20170818jieda?c=3"></iframe>
+
+
+</body></html>

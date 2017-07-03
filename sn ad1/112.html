@@ -1,0 +1,495 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>新捷达 韧性游西藏</title>
+    <meta name="viewport" content="width=640,maximum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <style>
+        html,
+        body {
+            -ms-touch-action: none;
+            background: #000000;
+            padding: 0;
+            border: 0;
+            margin: 0;
+            height: 100%;
+        }
+    </style>
+    <script src="https://hm.baidu.com/hm.js?e34046f7ebd1748eecb6b660be0fe7a5"></script><script type="text/javascript">
+    var ua = navigator.userAgent;
+    if(/Android (\d+\.\d+)/.test(ua)) {
+        var version = parseFloat(RegExp.$1);
+        if(version > 2.3) {
+            document.write('<meta name="viewport" content="width=640,  user-scalable=no,target-densitydpi=device-dpi,minimal-ui">');
+        } else {
+            document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+        }
+    } else {
+        document.write('<meta name="viewport" content="width=640,user-scalable=no, target-densitydpi=device-dpi,minimal-ui">');
+    }
+</script><meta name="viewport" content="width=640,user-scalable=no, target-densitydpi=device-dpi,minimal-ui">
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?e34046f7ebd1748eecb6b660be0fe7a5";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    <!--这个标签为通过egret提供的第三方库的方式生成的 javascript 文件-->
+    <!--modules_files_start-->
+    <script egret="lib" src="libs/modules/egret/egret.min.js"></script>
+    <script egret="lib" src="libs/modules/egret/egret.web.min.js"></script>
+    <script egret="lib" src="libs/modules/eui/eui.min.js"></script>
+    <script egret="lib" src="libs/modules/res/res.min.js"></script>
+    <script egret="lib" src="libs/modules/game/game.min.js"></script>
+    <script egret="lib" src="libs/modules/game/game.web.min.js"></script>
+    <script egret="lib" src="libs/modules/Dragonbones/Dragonbones.min.js"></script>
+    <script egret="lib" src="libs/modules/tween/tween.min.js"></script>
+    <!--modules_files_end-->
+
+    <!--这个标签为不通过egret提供的第三方库的方式使用的 javascript 文件，请将这些文件放在libs下，但不要放在modules下面。-->
+    <!--other_libs_files_start-->
+    <!--other_libs_files_end-->
+
+    <!--这个标签会被替换为项目中所有的 javascript 文件-->
+    <!--game_files_start-->
+    <script src="main.min.js"></script>
+    <!--game_files_end-->
+</head>
+
+<body>
+
+<div style="margin: auto; width: 100%; height: 100%; overflow: hidden; position: relative; transform: translateZ(0px);" class="egret-player" data-entry-class="Main" data-orientation="auto" data-scale-mode="showAll" data-resolution-mode="retina" data-frame-rate="30" data-content-width="640" data-content-height="1039" data-show-paint-rect="false" data-multi-fingered="2" data-show-fps="false" data-show-log="false" data-log-filter="" data-show-fps-style="x:0,y:0,size:13,textColor:0x00c200,bgAlpha:0.9">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-shadow: none;
+            font-weight: normal !important;
+            font-family: 'Microsoft YaHei', Arial;
+        }
+
+        input,
+        button,
+        select,
+        textarea {
+            outline: none;
+            appearance: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+        }
+
+        input::-webkit-input-placeholder,
+        textarea::-webkit-input-placeholder {
+            color: #fff;
+        }
+
+        #dialogMaskWrap{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            display: none;
+        }
+
+        #dialogMask {
+            display: block;
+            position: absolute;
+
+            left: 55px;
+            top: 170px;
+            width: 526px;
+            height: 775px;
+            background: url("resource/assets/ItemRenderer/leadsbg.jpg") no-repeat;
+        }
+
+        #dialogMaskWrap .bg{
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1;
+        }
+
+        #dialogMask .name {
+            position: absolute;
+            width: 454px;
+            height: 55px;
+            line-height: 55px;
+            left: 26px;
+            top: 306px;
+            font-size: 18px;
+            color: #fff;
+            padding: 0 12px;
+            background: none;
+            border: none;
+        }
+
+        #dialogMask .tel {
+            position: absolute;
+            width: 454px;
+            height: 55px;
+            line-height: 55px;
+            left: 26px;
+            top: 413px;
+            font-size: 18px;
+            color: #fff;
+            padding: 0 12px;
+            background: none;
+            border: none;
+        }
+
+        #dialogMask .sheng {
+            position: absolute;
+            width: 230px;
+            height: 55px;
+            line-height: 55px;
+            left: 26px;
+            top: 525px;
+            font-size: 18px;
+            color: #fff;
+            padding: 0 12px;
+            background: none;
+            border: none;
+        }
+
+        #dialogMask .shi {
+            position: absolute;
+            width: 230px;
+            height: 55px;
+            line-height: 55px;
+            left: 274px;
+            top: 525px;
+            font-size: 18px;
+            color: #fff;
+            padding: 0 12px;
+            background: none;
+            border: none;
+        }
+
+        #dialogMask .xy {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            left: 28px;
+            top: 600px;
+        }
+
+        #dialogMask .xy.h {
+            background: #fff;
+        }
+
+        #dialogMask .btn {
+            position: absolute;
+            width: 475px;
+            height: 50px;
+            left: 27px;
+            top: 680px;
+        }
+        #dialogMask #close {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            right: 0px;
+            top: 0px;
+        }
+
+        #lastIMG{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            z-index: 1111;
+        }
+
+        #musicBg{
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            z-index: 11;
+            top: 130px;
+            right: 30px;
+            background: url("resource/assets/ItemRenderer/music.png") no-repeat;
+        }
+
+        #musicBg.h{
+            background: url("resource/assets/ItemRenderer/music2.png") no-repeat;
+        }
+    </style>
+
+    <script src="http://rm.sina.com.cn/minisite/20170417audia3/wap/Scripts/zepto.js"></script>
+    <script src="./data.js" charset="utf-8"></script>
+    <script src="http://rm.sina.com.cn/minisite/publicweb/js/sina_xszc_inside.js"></script>
+    <!--<div id="musicBg"></div>-->
+    <audio id="nidaye" class="" src="http://rm.sina.com.cn/minisite/20170818jieda/resource/assets/music.mp3" loop="" autoplay="autoplay" preload="auto"></audio>
+
+    <div id="dialogMaskWrap">
+        <img class="bg" src="./resource/assets/ItemRenderer/leadsBg1.jpg">
+        <div id="dialogMask">
+
+
+
+            <input id="username" class="name" type="text" maxlength="4" placeholder="请输入您的姓名">
+            <input id="mob" class="tel" type="tel" maxlength="11" placeholder="请输入您的电话">
+
+            <select id="province" class="sheng"><option value="">省</option><option value="安徽">安徽</option><option value="北京">北京</option><option value="福建">福建</option><option value="甘肃">甘肃</option><option value="广西">广西</option><option value="广东">广东</option><option value="贵州">贵州</option><option value="河南">河南</option><option value="河北">河北</option><option value="黑龙江">黑龙江</option><option value="湖南">湖南</option><option value="湖北">湖北</option><option value="海南">海南</option><option value="吉林">吉林</option><option value="江苏">江苏</option><option value="江西">江西</option><option value="辽宁">辽宁</option><option value="内蒙古">内蒙古</option><option value="宁夏">宁夏</option><option value="青海">青海</option><option value="陕西">陕西</option><option value="上海">上海</option><option value="四川">四川</option><option value="山西">山西</option><option value="山东">山东</option><option value="天津">天津</option><option value="新疆">新疆</option><option value="西藏">西藏</option><option value="云南">云南</option><option value="重庆">重庆</option><option value="浙江">浙江</option></select>
+
+            <select id="city" class="shi">
+                <option>市</option>
+            </select>
+
+            <div id="cheak" class="xy h"></div>
+
+            <div id="tijiao" class="btn"></div>
+
+            <div id="close"></div>
+        </div>
+    </div>
+
+    <div id="lastIMG"><img src="./resource/assets/ItemRenderer/lastbg.jpg"></div>
+
+
+    <script>
+        (function(wd) {
+            if(!wd.hehe) {
+                wd.hehe = {};
+            };
+            wd.hehe = {
+                //禁止touch
+                cTouch: function() {
+                    $("body").on("touchstart, touchmove", function(e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        return false
+                    });
+                },
+
+                //恢复touch
+                hTouch: function() {
+                    $("body").off("touchstart, touchmove");
+                },
+
+                //中文
+                zw: function(str) {
+
+                    var re = /[^\u4e00-\u9fa5]/;
+                    if(re.test(str)) return false;
+                    return true;
+
+                },
+
+                //来源
+                _for: function() {
+                    var ua = navigator.userAgent.toLowerCase(); //获取判断用的对象
+
+                    if(ua.match(/MicroMessenger/i) == "micromessenger") {
+
+                        //在微信中打开
+
+                    }
+
+                    if(ua.match(/WeiBo/i) == "weibo") {
+                        //在新浪微博客户端打开
+
+                    }
+                },
+
+                //提交 //关注
+                tj: function() {
+
+                    //微信
+
+                    $.ajax({
+                        url: 'http://all.vic.sina.com.cn/201602weixin/interface/getToken.php?url=' + encodeURIComponent(window.location.href),
+                        type: 'get',
+                        dataType: "json",
+                        success: function(data) {
+                            if(data.errcode == 0) {
+                                console.log(data);
+
+                                //初始化wx sdk 配置
+                                wx.config({
+                                    debug: false,
+                                    appId: data.appid,
+                                    timestamp: data.timestamp,
+                                    nonceStr: data.noncestr,
+                                    signature: data.signature,
+                                    jsApiList: [
+                                        'checkJsApi',
+                                        'onMenuShareTimeline',
+                                        'onMenuShareAppMessage',
+                                        'onMenuShareQQ',
+                                        'onMenuShareWeibo',
+                                        'hideMenuItems',
+                                        'showMenuItems',
+                                        'closeWindow'
+                                    ]
+                                });
+
+                                //调用wx sdk 分享
+                                wx.ready(function() {
+
+                                    document.getElementById('nidaye').play();
+
+                                    wx.onMenuShareTimeline({
+                                        title: "新捷达 韧性游西藏",
+                                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                                        link: window.location.href,
+                                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                                        //分享成功、失败、用户取消及Menu菜单等回调函数有需求时请扩展
+                                    });
+                                    wx.onMenuShareQQ({
+                                        title: "新捷达 韧性游西藏",
+                                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                                        link: window.location.href,
+                                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                                    });
+                                    //朋友
+                                    wx.onMenuShareAppMessage({
+                                        title: "新捷达 韧性游西藏",
+                                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                                        link: window.location.href,
+                                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                                    });
+                                    wx.onMenuShareWeibo({
+                                        title: "新捷达 韧性游西藏",
+                                        desc: "看雪山 望银河 跟随新捷达 一起韧性游西藏",
+                                        link: window.location.href,
+                                        imgUrl: "http://rm.sina.com.cn/minisite/20170818jieda/share.png",
+                                    });
+
+                                });
+
+                            };
+                        }
+                    });
+
+
+
+                    $("#musicBg").click(function() {
+
+                        $(this).toggleClass("h");
+                        var $aud = document.getElementById('nidaye');
+
+                        if(myAudio.paused){
+                            $aud.play();
+                        }else{
+                            $aud.pause();
+                        }
+
+                    });
+
+
+                    $("#dialogMask #close").tap(function() {
+                        $("#lastIMG").show();
+                    });
+
+                    $("#cheak").tap(function() {
+                        $(this).toggleClass("h");
+                    });
+
+                    //提交
+                    $("#tijiao").click(function() {
+                        if(!$("#cheak").hasClass("h")) {
+                            alert("请阅读隐私条款");
+                            return false;
+                        }
+
+                        var $List = $("#dialogMask");
+                        var _rname = $List.find(".name").val();
+                        var _mob = $List.find(".tel").val();
+                        var _province = $List.find("#province option:selected").val();
+                        var _city = $List.find("#city option:selected").val();
+
+                        if(KW.stripSpace(_rname) == "") {
+                            alert("请填写姓名");
+                            return false;
+                        }
+
+                        if(!hehe.zw(_rname)) {
+                            alert("请填写正确姓名");
+                            return false;
+                        }
+
+                        if(!KW.isMobile(_mob)) {
+                            alert("请填写正确手机号");
+                            return false;
+                        }
+
+                        if($("#province").find("option:selected").val() == ""){
+                            alert("请选择省份");
+                            return false;
+                        }
+
+                        if($("#city").find("option:selected").val() == ""){
+                            alert("请选择市区");
+                            return false;
+                        }
+
+
+                        $.ajax({
+                            type: "get",
+                            //async: false,
+                            url: "http://client.sina.com.cn/201611car/interface/userOpt2.php",
+                            data: {
+                                "Pid": 72,
+                                "Name": _rname,
+                                "Tel": _mob,
+                                "Province": _province,
+                                "City": _city,
+                                "DataType": "jsonp",
+
+                            },
+                            dataType: "jsonp",
+                            jsonp: "callback",
+                            success: function(data) {
+                                if(data.errcode == 1000 || data.errcode == 1204) {
+
+                                    alert("提交成功");
+                                    $("#username").val("");
+                                    $("#mob").val("");
+                                    $("#province option").eq(0).attr("selected", "selected");
+                                    $("#city option").eq(0).attr("selected", "selected");
+
+                                    $("#lastIMG").show();
+
+                                } else {
+                                    alert(data.errmsg);
+                                }
+                            },
+                            error: function() {
+                                console.log('提交失败');
+                            }
+                        });
+                    })
+
+                },
+            }
+
+        })(this);
+
+        hehe.tj();
+
+
+
+    </script>
+
+    <canvas width="640" height="1039" style="cursor: inherit; position: absolute; top: -0.5px; bottom: 0px; left: 296.5px; right: 0px; transform-origin: 0% 0% 0px; width: 586px; height: 950px; transform: rotate(0deg);"></canvas><div id="StageDelegateDiv" style="position: absolute; left: 296.5px; top: -0.5px; border: none; padding: 0px; transform: rotate(0deg); transform-origin: 0% 0% 0px;"><div style="position: absolute; left: 0px; top: -100px; border: none; padding: 0px; width: 0px; height: 0px; transform-origin: 0% 0% 0px;"><textarea id="egretTextarea" tabindex="-1" style="resize: none; width: 1px; height: 12px; position: absolute; left: 0px; top: 0px; border: none; padding: 0px; outline: thin; background: none; overflow: hidden; word-break: break-all; opacity: 0;"></textarea><input id="egretInput" type="text" tabindex="-1" style="width: 1px; height: 12px; position: absolute; left: 0px; top: 0px; border: none; padding: 0px; outline: thin; background: none; overflow: hidden; word-break: break-all; opacity: 0;"></div></div></div>
+<script>
+    egret.runEgret({
+        renderMode: "webgl"
+    });
+</script>
+
+
+</body></html>
