@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>jquery-countdown plugin test</title>
+  <link rel="stylesheet" type="text/css" href="media.css" />
+  <script src="jquery.min.js"></script>
+  <script src="jquery.countdown.js"></script>
+  <script>
+    $(function(){
+      $(".digits").countdown({
+        image: "digits.png",
+        format: "mm:ss",
+        startTime: "25:14"
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="cell">
+      <div id="holder">
+        <div class="digits"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
