@@ -3,17 +3,17 @@ $(document).ready(function() {
 	var h = $("#parallax-canvas").height();
 	
 	var sky = new Image();
-	sky.src = "img/sky.jpg";
+	sky.src = "images/sky.jpg";
 	var skydx = 2;  // Amount to move sky image
 	var skyx = 0;  // x coord to slice sky image
 	
 	var mountains = new Image();
-	mountains.src ="img/mountains.png";
+	mountains.src ="images/mountains.png";
 	var mountainsdx = 10; // Amount to move mountain image
 	var mountainsx = 0; // x coord to slice mountain image
 	
 	var jeep = new Image();
-	jeep.src ="img/jeep.png";
+	jeep.src ="images/jeep.png";
 	var jeepx = 100; // x coord of jeep image
 	var jeepy = 210; // y coord of jeep image
 	var jeepsx = 0; // x coord to slice jeep image
