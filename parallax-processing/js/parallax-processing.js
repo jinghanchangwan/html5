@@ -3,23 +3,23 @@ $(document).ready(function() {
 	var h = $("#parallax-canvas").height();
 	
 	var sky = new Image();
-	sky.src = "assets/img/sky.jpg";
+	sky.src = "img/sky.jpg";
 	var skydx = 2;  // Amount to move sky image
 	var skyx = 0;  // x coord to slice sky image
 	
 	var mountains = new Image();
-	mountains.src ="assets/img/mountains.png";
+	mountains.src ="img/mountains.png";
 	var mountainsdx = 10; // Amount to move mountain image
 	var mountainsx = 0; // x coord to slice mountain image
 	
 	var jeep = new Image();
-	jeep.src ="assets/img/jeep.png";
+	jeep.src ="img/jeep.png";
 	var jeepx = 100; // x coord of jeep image
 	var jeepy = 210; // y coord of jeep image
 	var jeepsx = 0; // x coord to slice jeep image
 	var jeepsxWidth = 155; // x coord offset for slice jeep width
 	
-	var cntx =  $("#parallax-canvas")[0].getContext("2d");
+	var cntx = $("#parallax-canvas")[0].getContext("2d");
 	setInterval(draw, 10, cntx);
 	
 	$(window).keydown(function(evt) {
