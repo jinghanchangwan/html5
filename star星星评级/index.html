@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>实用jQuery星级评分特效代码 - JS代码网</title>
+<meta name="keywords" content="JS代码,JS特效代码,jQuery特效,jQuery星级评分插件,JS星级评分代码,jQuery星星评分" />
+<meta name="description" content="JS代码网提供jQuery插件、jQuery星级评分特效学习和下载" />
+</head>
+
+<style type="text/css">
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";color:#5e5e5e;}
+
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:inline-table}
+*html .clearfix{height:1%}
+.clearfix{display:block}
+*+html .clearfix{min-height:1%}
+.fl{float:left;}
+
+.gradecon{border:1px solid #E0DCDC;background:#fefdea;padding:10px;width:320px;margin:40px auto 0 auto;}
+.rev_pro li{line-height:20px;height:20px;}
+.rev_pro li .revtit{text-align:right;display:block;float:left;margin-right:10px;width:70px;}
+.revinp{float:left;display:inline;}
+.level .level_solid,.level .level_hollow{float:left;background-image:url("images/icon2.png");background-repeat:no-repeat;display:inline-block;width:15px;height:15px;}
+.level .level_solid{background-position:0px 0px;}
+.level .level_hollow{background-position:-21px 0px;}
+.revgrade{margin-left:20px;}
+</style>
+
+
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript">
+var degree = ['','很差','差','中','良','优','未评分'];
+//重新点评
+function addComment2(e,inid,opt,id){
+	$.ajax({
+		url:'siteMessage/content',
+		type:'post',
+		data:'id='+id,
+		dataType:'json',
+		success:function(data){
+			if(data.status==1){
+				var list = $('#Addnewskill_119');
+				list.eq(0).html(data.talent+'(人才ID：'+data.talentId+')');
+				list.eq(1).html(data.job);
+				list.eq(2).html(data.ms);
+				
+				var arr = [data.total,data.expAuth,data.killAuth,data.followTime,data.formality,data.appReact];
+				var list2 = $('span.level','#Addnewskill_119');
+				$('input[name="InterviewCommentInfoSub[opt]"]').val(opt+1);
+				list2.each(function(i,v){
+						var a = '';
+						
+						if(i>0){
+							a = 'cjmark';
+							$(v).parents('li').find('input').val(arr[i]);
+						}
+						var str = '';
+						if(arr[i]==6){
+							for(var n=0;n<=4;n++){
+								str += '<i '+a+' class="level_hollow"></i>';
+							}
+							$(v).parents('li').find('input').prop('disabled',true)
+						}else{
+							$(v).parents('li').find('input').prop('checked',true)
+							for(var n=0;n<arr[i];n++){
+								str += '<i '+a+' class="level_solid"></i>';
+							}
+							for(var n=0;n<(5-arr[i]);n++){
+								str += '<i '+a+' class="level_hollow"></i>';
+							}
+						}
+						$(v).html(str);
+						$(v).next().html(degree[arr[i]]);
+					
+				})
+				
+				
+				create_show(119);
+			}else{
+				ui.error(data.msg,2000);
+			}
+		}
+	})	
+}
+//提交点评
+function addComment3(){
+	$.ajax({
+		url:'siteMessage/commentinterview',
+		type:'post',
+		data:$('form[name="comment"]').serialize(),
+		dataType:'json',
+		success:function(data){
+
+		}
+
+	})
+}
+
+$(function(){
+	//点星星
+	$(document).on('mouseover','i[cjmark]',function(){
+		var num = $(this).index();
+		var pmark = $(this).parents('.revinp');
+		var mark = pmark.prevAll('input');
+	
+		if(mark.prop('checked')) return false;
+		
+		var list = $(this).parent().find('i');
+		for(var i=0;i<=num;i++){
+			list.eq(i).attr('class','level_solid');
+		}
+		for(var i=num+1,len=list.length-1;i<=len;i++){
+			list.eq(i).attr('class','level_hollow');
+		}
+		$(this).parent().next().html(degree[num+1]);
+
+	})
+	//点击星星
+	$(document).on('click','i[cjmark]',function(){
+		var num = $(this).index();
+		var pmark = $(this).parents('.revinp');
+		var mark = pmark.prevAll('input');
+		
+		if(mark.prop('checked')){
+			mark.val('');
+			mark.prop('checked',false);mark.prop('disabled',true);	
+		}else{
+			mark.val(num);
+			mark.prop('checked',true);mark.prop('disabled',false);	
+		}
+	})
+	//选框
+	$('#Addnewskill_119 input[type="checkbox"]').change(function(){
+		if($(this).not(':checked')){//!($(this).prop('checked'))
+			$(this).prop('checked',false);$(this).prop('disabled',true)
+			var smark = $(this).nextAll('.revinp');
+			smark.find('span.revgrade').html('未评分');
+			smark.find('i').attr('class','level_hollow');
+			smark.val(6);
+		}
+	})
+	
+
+})
+</script>
+<body>
+<input class="fl" type="checkbox" style="margin-top:2px;" name="InterviewCommentInfoSub[expAuth]" value="3" />
+<div class="revinp">
+				<span class="level">
+					<i class="level_solid" cjmark=""></i>
+					<i class="level_solid" cjmark=""></i>
+					<i class="level_solid" cjmark=""></i>
+					<i class="level_solid" cjmark=""></i>
+					<i class="level_hollow" cjmark=""></i>
+				</span>
+</div>
+</body>
+</html>

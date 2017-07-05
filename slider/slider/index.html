@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>jQuery UI增强功能的Slider滑块插件</title>
+<meta name="description" content="Take your jQuery UI Slider to the next level; Pips and Floats for sexy sliders.">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<link rel="stylesheet" href="css/jqueryui.min.css"/>
+<link rel="stylesheet" href="css/jquery-ui-slider-pips.min.css"/>
+<style>
+    .tabs-content{padding:50px;}
+</style>
+</head>
+<body>
+<div class="tabs-content">
+<div class="content active" id="steps-fivepercent-slider-result">
+    <div id="steps-fivepercent-slider"></div>
+</div>
+</div>
+<script src="js/jquery-plus-ui.min.js"></script>
+<!-- slider -->
+<script src="js/jquery-ui-slider-pips.js"></script>
+<script>
+    $(function(){
+        $("#steps-fivepercent-slider")
+                .slider({ min: 3000, max: 16000, step: 1000, values: [3000, 16000] })
+                .slider("pips", {
+                    rest: "label",
+                    step: 2
+                })
+                .slider("float");
+    });
+</script>
+</body>
+</html>
