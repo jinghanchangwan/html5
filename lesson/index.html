@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=750,maximum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <title>lesson one</title>
+    <link rel="stylesheet" type="text/css" href="../css/pace.css" />
+    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide spage1">
+            <img class="per1 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/p1.png" />
+            <img class="per2 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s" src="images/p2.png" />
+            <img class="per3 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/p3.png" />
+            <img class="per4 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s" src="images/p4.png" />
+            <img class="per5 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="images/p5.png" />
+            <img class="per6 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s" src="images/p6.png" />
+            <img class="ss1 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s" src="images/01.png" />
+            <img class="ss2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1s" src="images/02.png" />
+            <img class="ss3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1.2s" src="images/03.png" />
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/pace.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/swiper.animate.min.js"></script>
+<script>
+    window.onload = function(){
+        var init = setInterval(function() {
+            if (!Pace.running) {
+                clearInterval(init);
+                $(window).resize(function(){
+                    $('#page').height('100%');
+                });
+                $('#page').height('100%');
+
+                var swiper = new Swiper('.swiper-container', {
+                    onInit: function(swiper){
+                        swiperAnimateCache(swiper);
+                        swiperAnimate(swiper);
+                    },
+                    onSlideChangeEnd: function(swiper){
+                        swiperAnimate(swiper);
+                    },
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    direction: 'vertical'
+                });
+
+            }
+        },100);
+    }
+</script>
+</body>
+</html>
