@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=640,maximum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="full-screen" content="true">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="360-fullscreen" content="true">
+    <title>parallax-processing-exercise</title>
+    <link rel="stylesheet" type="text/css" href="../css/pace.css" />
+    <link href="../css/swiper.min.css" rel="stylesheet">
+    <link href="../css/animate.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body>
+<canvas id="mycanvas" width="640" height="1136">Your browser does not support the HTML5 canvas tag.</canvas>
+<div id="indexWrap">
+    <div class="close"></div>
+    <div class="box1">
+        <!-- 图片轮动弹出-->
+        <div class="btnl"></div>
+        <div class="btnr"></div>
+        <div id="sp1" class="swiper-container-horizontal swiper-container-fade">
+            <div class="smark"></div>
+            <div class="swiper-wrapper" style="transition-duration: 0ms;">
+                <div class="swiper-slide s1" style="width:500px; opacity: 0; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
+                    <img class="img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/pop1_1.png" />
+                    <img class="img2 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/pop1_2.png" />
+                    <img class="img3 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/pop1_3.png" />
+                </div>
+                <div class="swiper-slide s2" style="width:500px; opacity: 0; transform: translate3d(-500px, 0px, 0px); transition-duration: 0ms;">
+                    <img class="img1 ani" swiper-animate-effect="fadeInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/pop2_1.png" />
+                    <img class="img2 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/pop2_2.png" />
+                    <img class="img3 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/pop2_3.png" />
+                </div>
+            </div>
+        </div>
+
+        <div id="pop"></div>
+        <div id="sp2" class="swiper-container-horizontal">
+            <div class="close"></div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide-active" style="width: 508px;"><img src="images/pop2_1.jpg"></div>
+                <div class="swiper-slide swiper-slide-next" style="width: 508px;"><img src="images/pop2_2.jpg"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/pace.js"></script>
+<script src="../js/swiper.min.js"></script>
+<script src="../js/swiper.animate.min.js"></script>
+<script>
+    window.onload = function(){
+        var init = setInterval(function(){
+            if(!Pace.running) {
+                clearInterval(init);
+
+                $(window).resize(function(){
+                    $('#mycanvas').height('100%');
+                });
+                $('#mycanvas').height('100%');
+                var c=document.getElementById("mycanvas");
+                var ctx=c.getContext("2d");
+                var bg = new Image();
+                var car = new Image();
+                var control = new Image();
+                var gold = new Image();
+                bg.src = "images/bg.jpg";
+                car.src="images/car.png";
+                control.src="images/control.png";
+                gold.src="images/gold.png";
+
+                var cinit = setInterval(ssFun,50);
+                var bgY = 7952;
+                var carX = 345;
+                var carY = 720;
+                var goldX1 = 370;
+                var goldY1 = 200;
+                function ssFun(){
+                    if(bgY>1136){
+                        if(goldX1-carX>0&&goldX1-carX<=30&&carY<=goldY1+46&&goldY1<750){//first gold
+                            ctx.rect(0, 0, 640, 1136);
+                            ctx.drawImage(bg, 0, bgY, 640, 1136, 0, 0, 640, 1136);
+                            if(goldY1<1136){ctx.drawImage(gold,0,0,50,46,goldX1,goldY1,50,46);}
+                            ctx.drawImage(car, 0, 0, 122, 236, carX, carY, 122, 236);
+                            ctx.drawImage(control,0,0,640,185,0,951,640,185);
+                            controlFun();
+                            clearInterval(cinit);
+                            $("#indexWrap").show();
+                            popFun();
+                            return;
+                        }else{
+                            bgY-=50;
+                            ctx.rect(0, 0, 640, 1136);
+                            ctx.drawImage(bg, 0, bgY, 640, 1136, 0, 0, 640, 1136);
+                            if(bgY>4000&&bgY<5000&&goldY1<1136){
+                                goldY1+=50;
+                                ctx.drawImage(gold,0,0,50,46,goldX1,goldY1,50,46);
+                            }
+                            ctx.drawImage(car, 0, 0, 122, 236, carX, carY, 122, 236);
+                            ctx.drawImage(control,0,0,640,185,0,951,640,185);
+                            controlFun();
+                        }
+                    }else if(bgY>0&&bgY<=1136){console.log("draw");
+                        bgY-=50;
+                        if(bgY>4000&&bgY<5000)goldY1+=50;
+                        carY-=50;
+                        if(carY>-286){
+                            ctx.rect(0, 0, 640, 1136);
+                            ctx.drawImage(bg, 0, 0, 640, 1136, 0, 0, 640, 1136);
+                            ctx.drawImage(car, 0, 0, 122, 236, carX, carY, 122, 236);
+                            ctx.drawImage(control,0,0,640,185,0,951,640,185);
+                            controlFun();
+                        }
+                    }else{
+                        clearInterval(cinit);
+                        return;
+                    }
+                }
+                //控制车辆——按钮
+                function controlFun(){
+                    var controlLeft = {x: 30, y: 1020, w: 90, h: 100};
+                    var controlRight = {x: 524, y: 1020, w: 90, h: 100};
+                    //ctx.fillRect(controlLeft.x, controlLeft.y, controlLeft.w, controlLeft.h);
+                    c.onclick = function (e){
+                        e = e || event;
+                        var cH = $('#mycanvas').height();
+                        var actR = c.height/cH;
+                        var x = (e.clientX - c.offsetLeft)*actR;
+                        var y = (e.clientY - c.offsetTop)*actR;
+                        if (x >= controlLeft.x && x <= controlLeft.x + controlLeft.w && y >= controlLeft.y && y <= controlLeft.y + controlLeft.h){//left
+                            if (carX==345)
+                                carX=190;
+                            else
+                                carX = carX;
+                        }else if(x>=controlRight.x&&x<=controlRight.x+controlRight.w&&y>=controlRight.y&&y<=controlRight.y+controlRight.h){//right
+                            if (carX==190)
+                                carX=345;
+                            else
+                                carX = carX;
+                        }
+                    }
+                }
+                //控制车辆——键盘
+                $(window).keydown(function(evt) {
+                    switch (evt.keyCode) {
+                        case 37: // Left arrow
+                            if (carX==345)
+                                carX=190;
+                            else
+                                carX = carX;
+                            break;
+
+                        case 39: // Right arrow
+                            if (carX==190)
+                                carX=345;
+                            else
+                                carX = carX;
+                            break;
+                    }
+                });
+                //弹层展示
+                function popFun(){
+                    var sp1 = new Swiper('#sp1', {
+                        effect: 'fade',
+                        fade: {
+                            crossFade: true,
+                        },
+                        onInit: function (swiper) {
+                            swiperAnimateCache(swiper);
+                            swiperAnimate(swiper);
+                        },
+                        onTransitionEnd: function (swiper) {
+                            swiperAnimate(swiper);
+                        },
+                        loop: true,
+                    });
+
+                    var sp2 = new Swiper('#sp2', {
+                        loop: true,
+                        //loopAdditionalSlides : 1,
+                    });
+                    //切换 sp
+                    $(".btnr").on("click", function () {
+
+                        sp1.slideNext();
+                        sp2.slideNext();
+
+                    });
+                    $(".btnl").on("click", function () {
+                        sp1.slidePrev();
+                        sp2.slidePrev();
+                    });
+
+                    $("#sp1 .swiper-slide .img3").on("click", function (e) {
+
+                        setTimeout(function () {
+                            if (sp1.animating) {
+                                return false;
+                            }
+
+                            //去除body Touch事件
+                            $("body").on("touchstart, touchmove", function (e) {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                return false
+                            });
+                            $("#pop").show();
+                            var index = sp1.activeIndex;
+                            sp2.slideTo(index, 0);
+                            $("#sp2").css("height", "457px");
+                        }, 50);
+                        e.preventDefault();
+                    });
+                    $("#sp2 .close").on("click", function () {
+
+                        //恢复body Touch事件
+                        $("body").off("touchstart, touchmove");
+                        $("#pop").hide();
+                        var index = sp2.activeIndex;
+                        sp1.slideTo(index, 0);
+                        $("#sp2").css("height", "0px");
+
+                    });
+                    /*sp1.params.control = sp2;
+                    sp2.params.control = sp1;*/
+                    $("#indexWrap>.close").on("click",function(){
+                        $("#indexWrap").hide();
+                        goldY1+=50;
+                        if(goldY1>1150){
+                            goldY1=1150;
+                        }
+                        clearInterval(cinit);
+                        setInterval(ssFun,50);
+                    });
+                }
+            }
+        }, 100);
+    };
+
+</script>
+</html>

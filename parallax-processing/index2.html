@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>parallax-processing</title>
+<style>
+    body{text-align: center;}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="400" height="300">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+<script type="text/javascript">
+    var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    var sky=new Image();
+    var mountain=new Image();
+    var jeep=new Image();
+    sky.src="images/sky.jpg";
+    mountain.src="images/mountains.png";
+    jeep.src="images/jeep.png";
+    sky.onload = function(){
+        ctx.drawImage(sky,0,0,400,300,0, 0,400,300);
+        ctx.drawImage(mountain,0,0,400,300,0,0,400,300);
+        ctx.drawImage(jeep,0,0,155,60,100, 210,155,60);
+    };
+    setInterval(ssFun,50);
+    var skyx=0;
+    var skyx2=0;
+    var mountainx=0;
+    var jeepx=0;
+    var jeepx2=100;
+    var jeepw=155;
+    var jeeph=60;
+    function ssFun(){
+        skyx+=1;
+        mountainx+=10;
+        if(mountainx==400)mountainx=0;
+        jeepx-=155;
+        if(jeepx<-jeepw*2)jeepx=0;
+        if(skyx<400) {
+            ctx.rect(0, 0, 400, 300);
+            ctx.drawImage(sky, skyx, 0, 400, 300, 0, 0, 400, 300);
+            ctx.drawImage(mountain,mountainx,0,400,300,0,0,400,300);
+            ctx.drawImage(jeep,-jeepx,0,jeepw,60,100, 210,jeepw,jeeph);
+        }else{
+            skyx2+=1;
+            jeepx2+=10;
+            if(jeepx2<410){
+                if(skyx2>400)skyx2==0;
+                ctx.rect(0, 0, 400, 300);
+                ctx.drawImage(sky, skyx2, 0, 400, 300, 0, 0, 400, 300);
+                ctx.drawImage(mountain,mountainx,0,400,300,0,0,400,300);
+                ctx.drawImage(jeep, -jeepx, 0, jeepw, 60, jeepx2, 210, jeepw, jeeph);
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
