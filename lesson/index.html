@@ -2,52 +2,251 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html;charset=gbk">
     <meta name="viewport" content="width=750,maximum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi,minimal-ui">
+    <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="full-screen" content="true">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="x5-fullscreen" content="true">
-    <meta name="360-fullscreen" content="true">
     <title>lesson one</title>
-    <link rel="stylesheet" type="text/css" href="../css/pace.css" />
-    <link rel="stylesheet" type="text/css" href="../css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/pace.css" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
-<div class="swiper-container">
+<div class="swiper-container swiper-container-v">
     <div class="swiper-wrapper">
         <div class="swiper-slide spage1">
-            <img class="per1 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/p1.png" />
-            <img class="per2 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s" src="images/p2.png" />
-            <img class="per3 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s" src="images/p3.png" />
-            <img class="per4 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.4s" src="images/p4.png" />
-            <img class="per5 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="images/p5.png" />
-            <img class="per6 ani" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.1s" src="images/p6.png" />
-            <img class="ss1 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s" src="images/01.png" />
-            <img class="ss2 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1s" src="images/02.png" />
-            <img class="ss3 ani" swiper-animate-effect="fadeInUp" swiper-animate-duration="0.8s" swiper-animate-delay="1.2s" src="images/03.png" />
+            <img class="logo ani" swiper-animate-effect="bounceInLeft" swiper-animate-duration="0.5s" swiper-animate-delay="" src="images/logo.png" />
+            <img class="logo2 ani" swiper-animate-effect="bounceInRight" swiper-animate-duration="0.5s" swiper-animate-delay="0.2s" src="images/logo2.png" />
+            <img class="tit1 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.4s" swiper-animate-delay="0.6s" src="images/tit1.png" />
+            <img class="tit2 ani" swiper-animate-effect="bounceIn" swiper-animate-duration="0.4s" swiper-animate-delay="0.8s" src="images/tit2.png" />
+            <img class="tit3 ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="1.2s" src="images/tit3.png" />
+            <img class="sdown" src="images/down.png" />
         </div>
-        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide spage2">
+            <img class="d1 ani" data-i="1" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="" src="images/dot.png" />
+            <img class="t1 ani" data-i="1" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.2s" src="images/t1.png" />
+            <img class="d2 ani" data-i="2" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s" src="images/dot.png" />
+            <img class="t2 ani" data-i="2" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.3s" src="images/t2.png" />
+            <img class="d3 ani" data-i="3" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.2s" src="images/dot.png" />
+            <img class="t3 ani" data-i="3" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.4s" src="images/t3.png" />
+            <img class="d4 ani" data-i="4" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.3s" src="images/dot.png" />
+            <img class="t4 ani" data-i="4" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.5s" src="images/t4.png" />
+            <img class="d5 ani" data-i="5" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.4s" src="images/dot.png" />
+            <img class="t5 ani" data-i="5" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.6s" src="images/t5.png" />
+            <img class="d6 ani" data-i="6" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.5s" src="images/dot.png" />
+            <img class="t6 ani" data-i="6" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.7s" src="images/t6.png" />
+            <img class="d8 ani" data-i="8" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.7s" src="images/dot.png" />
+            <img class="t8 ani" data-i="8" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.9s" src="images/t8.png" />
+            <img class="d7 ani" data-i="7" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.6s" src="images/dot.png" />
+            <img class="t7 ani" data-i="7" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.8s" src="images/t7.png" />
+            <img class="d9 ani" data-i="9" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.8s" src="images/dot.png" />
+            <img class="t9 ani" data-i="9" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="1s" src="images/t9.png" />
+            <img class="d10 ani" data-i="10" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.9s" src="images/dot.png" />
+            <img class="t10 ani" data-i="10" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="1.1s" src="images/t10.png" />
+            <img class="d11 ani" data-i="11" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="1s" src="images/dot.png" />
+            <img class="t11 ani" data-i="11" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="1.2s" src="images/t11.png" />
+            <img class="d12 ani" data-i="12" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.85s" src="images/dot.png" />
+            <img class="t12 ani" data-i="12" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="1.05s" src="images/t12.png" />
+            <img class="d13 ani" data-i="13" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.75s" src="images/dot.png" />
+            <img class="t13 ani" data-i="13" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.95s" src="images/t13.png" />
+            <img class="d14 ani" data-i="14" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.65s" src="images/dot.png" />
+            <img class="t14 ani" data-i="14" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.85s" src="images/t14.png" />
+            <img class="d15 ani" data-i="15" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.55s" src="images/dot.png" />
+            <img class="t15 ani" data-i="15" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.75s" src="images/t15.png" />
+            <img class="d16 ani" data-i="16" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.45s" src="images/dot.png" />
+            <img class="t16 ani" data-i="16" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.65s" src="images/t16.png" />
+            <img class="d17 ani" data-i="17" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.35s" src="images/dot.png" />
+            <img class="t17 ani" data-i="17" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.55s" src="images/t17.png" />
+            <img class="d20 ani" data-i="20" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.05s" src="images/dot.png" />
+            <img class="t20 ani" data-i="20" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.25s" src="images/t20.png" />
+            <img class="d19 ani" data-i="19" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.15s" src="images/dot.png" />
+            <img class="t19 ani" data-i="19" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.35s" src="images/t19.png" />
+            <img class="d18 ani" data-i="18" swiper-animate-effect="bounceInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.25s" src="images/dot.png" />
+            <img class="t18 ani" data-i="18" swiper-animate-effect="fadeIn" swiper-animate-duration="0.3s" swiper-animate-delay="0.45s" src="images/t18.png" />
+            <img class="ball ani" data-i="1" swiper-animate-effect="bounceIn" swiper-animate-duration="0.5s" swiper-animate-delay="0.5s" src="images/ball.png" />
+            <img class="shand" src="images/hand.png" />
+        </div>
+        <div class="swiper-slide spage3">
+            <div class="pagecon">
+                <img src="images/p3con.png" alt="" />
+            </div>
+        </div>
+        <div class="swiper-slide spage4">
+            <div class="pagecon">
+                <img src="images/p4con.png" alt="" />
+            </div>
+        </div>
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
 </div>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/pace.js"></script>
-<script src="../js/swiper.min.js"></script>
-<script src="../js/swiper.animate.min.js"></script>
+<div id="pop"></div>
+<div id="popteam" class="swiper-container-horizontal">
+    <div class="close"></div>
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">纽卡斯尔联足球俱乐部<span>Newcastle United Football Club</span></p>
+                <p class="teaminfo">是一家位于纽卡斯尔的英格兰足球俱乐部，成立于1881年，英格兰足球超级联赛球队之一，主场位于泰恩河畔纽卡斯尔（Newcastle upon Tyne）的圣詹姆斯公园球场。纽卡斯尔联队不仅在英国，而且在整个欧洲都是成立最早的足球俱乐部之一。</p>
+                <p class="teaminfo">纽卡斯尔联队到1930年1月才拥有第一位主教练，但此前在俱乐部秘书弗兰克·沃特的率领下曾4次夺联赛冠军，2次夺英格兰足总杯冠军，4次获英格兰足总杯亚军[1]  。俱乐部最后一次的重要荣誉是在1969年获得欧洲博览会杯冠军。球迷亲切的称这只穿黑白条球衣的球队为“喜鹊”。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">哈德斯菲尔德足球俱乐部<span>Huddersfield Town Association Football Club</span></p>
+                <p class="teaminfo">是位于英国西约克郡哈德斯菲尔德的职业足球俱乐部，现时在英格兰冠军联赛。球队成立于1908年，在1910年加入英格兰足球联赛，连续三年（1923/24年、1924/25年及1925/1926年）夺得甲级联赛冠军成为首支「三连冠」（Treble）的球队，被誉为当时英国以至全世界最强的球队。</p>
+                <p class="teaminfo">二战后，哈德斯菲尔德开始衰落，自1972年由顶级的甲级联赛降级后，45年来都在低组别的联赛角逐。2012年才由第三级联赛英甲升级至英冠。2016/17赛季，哈德斯菲尔德取得英冠第五名，取得参加升级附加赛资格，哈德斯菲尔德在附加赛半决赛及决赛皆以点球大战分别击败谢周三及雷丁，取得升级附加赛冠军，历史性首次升上英超比赛</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">沃特福德足球俱乐部<span>Watford Football Club(WFC)</span></p>
+                <p class="teaminfo">是位于英格兰赫特福德郡沃特福德（Watford）的职业足球俱乐部，现时在英格兰足球超级联赛作赛。名歌星艾尔顿·约翰是沃特福德的前东主、两度主席及永远名誉会长，于2008年11月6日宣布辞任永远名誉会长，于2009年3月25日再次担任永远名誉会长。</p>
+                <p class="teaminfo">沃特福德一直都只是在较低组别联赛浮浮沉沉，1977/78年球季曾在前英格兰领队格拉咸·泰莱带领下从丁组一直升上当时的顶级甲组联赛，升级首季（1982/83年）仅排在利物浦之后获联赛亚军，更在1984年晋身足总杯决赛负于埃弗顿。可惜在泰莱於1987/88球季转投阿斯顿维拉後即降级乙组。泰莱在1996年重投屈福特担任足球总监，在球队降下乙组〈III〉後重出江湖，协助球队接连升级，终在2000/01球季升上超级联赛，因实力不足，连败22场比赛後在积分榜上排包尾，终而降级回甲组〈II〉。2006年，沃特福德胜出英冠升班附加赛，再一次升上英超，可惜一年後护级失败再次降落英冠。自此，沃特福德一直在英冠作赛。直到2014-15赛季，沃特福德取得英冠亚军及直接升班英超席位。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">阿森纳足球俱乐部<span>Arsenal Football Club</span></p>
+                <p class="teaminfo">是一家位于英国首都伦敦西北部的足球俱乐部，成立于1886年，是英格兰顶级联赛英格兰超级联赛二十个足球俱乐部球队之一，俱乐部基地位于伦敦荷洛（Holloway）。</p>
+                <p class="teaminfo">阿森纳是英超上最具规模的俱乐部之一，从俱乐部成立后共夺得13次取得英格兰顶级联赛的冠军，13次英格兰足总杯的冠军，3次英格兰足球超级联赛的冠军，是英格兰顶级足球联赛停留得最久的俱乐部</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">水晶宫足球俱乐部<span>Crystal Palace Football Club</span></p>
+                <p class="teaminfo">是位於英格兰伦敦（南部）的职业足球队，现时在英格兰足球超级联赛作赛，成立於1905年，在2005/06赛季庆祝成立百年纪念。主场为塞尔赫斯特公园球场（Selhurst Park）。</p>
+                <p class="teaminfo">早年的水晶宫只在低级别的联赛角逐，1969年才首次升上当时的顶级联赛英甲。之後四十多年水晶宫在英格兰各级联赛浮沉，曾多次升上顶级联赛(旧英甲及英超)，但最长只在顶级联赛四个球季就护级失败降回次级联赛，被喻为一支「升降机」球队。</p>
+                <p class="teaminfo">2009/10年度球季，当时在英冠作赛的水晶宫因财政问题而被接管，被扣十分，最後排名倒数第四，仅仅保住英冠席位。但2012/13年度球季，水晶宫取得英冠第五名，可参加升班附加赛，最後获胜得以升上英超。2013/14年度球季，返回英超作赛的水晶宫取得第十一名，不但成功保住英超席位，更是球会史上最高的英超排名。2014/15年度球季，水晶宫在季中仍为护级而战，球会成功罗致纽卡素领队柏祖成为新领队，结果不但令水晶宫提早护级成功，而且更取得联赛第十名，超越去年记录，取得球会史上最高的英超排名。</p>
+                <p class="teaminfo">水晶宫是目前英超唯一一支拥有啦啦队的球队。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">切尔西足球俱乐部<span>Chelsea Football Club</span></p>
+                <p class="teaminfo">绰号蓝军、蓝狮。参加英格兰足球超级联赛，与尤文图斯、拜仁慕尼黑、阿贾克斯、曼联并列为欧洲大满贯球队。俱乐部成立于1905年3月14日[1]  ，主场位于伦敦哈默史密斯·富勒姆区邻近泰晤士河的斯坦福桥球场。</p>
+                <p class="teaminfo">阿布收购切尔西后斥巨资引援，球队逐渐成为豪门。球队以稳如磐石的防守和铁血精神著称，也以过于防守的“摆大巴”战术而蜚声足坛，是足坛防守反击打法的代表球队之一，也是欧洲乃至世界最具有影响力最成功的球队之一。</p>
+                <p class="teaminfo">至2015年5月3日，切尔西共赢得过6次英格兰顶级联赛冠军（老英甲1次，英超5次）[2]  ，7次英格兰足总杯冠军，5次英格兰联赛杯冠军，4次英格兰社区盾，2次欧洲优胜者杯冠军，1次欧洲超级杯，1次欧洲冠军联赛冠军，1次欧罗巴联赛冠军。</p>
+                <p class="teaminfo">2017年7月7月23日，切尔西俱乐部通过官方网站，对于小将肯尼迪“辱华”一事做出正式道歉。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+            <p class="teamname">托特纳姆热刺足球俱乐部<span>Tottenham Hotspur Football Club</span></p>
+            <p class="teaminfo">由于传统主场球衣为白色，热刺球迷被称为“白百合”（Lilywhites）。成立于1882年，主场位于伦敦北部托特纳姆的白鹿巷球场。俱乐部格言“Audere est Facere”意为“敢作敢为”。早于第一次世界大战时期热刺已与邻近的阿森纳成为死敌，两队间的比赛乃著名的“北伦敦德比”。</p>
+            <p class="teaminfo">热刺是二十世纪首支成为联赛及英格兰足总杯双料冠军的球队。是三支可以连夺两届英格兰足总杯的球队之一，亦是唯一曾两度实现这一成绩的球队。在1963年夺得欧洲优胜者杯宝座，是英国首支取得欧洲赛事锦标的队伍。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">西汉姆联足球俱乐部<span>West Ham United Football Club</span></p>
+                <p class="teaminfo">英格兰传统足球俱乐部，位于外伦敦东部纽汉区，成立于1895年，球队主场是厄普顿公园球场。球队总共获得三次足总杯冠军，一次欧洲优胜者杯冠军。</p>
+                <p class="teaminfo">西汉姆联在上世纪七十至九十年代初浮沉於当时的顶级联赛英甲及次级联赛之间，被喻为「升降机」，1993年西汉姆联升上英超后，在英超角逐了十个球季，但在2003年虽然在联赛取得42分，仍只排行第十八名，要降落英冠作赛，当届韦斯咸也成为自1995年英超联参赛队伍减至二十队以来，历届英超降班球队中得分最高的一队。西汉姆联在英冠角逐了两届，2005年透过赢取英冠升班附加赛重返英超，并在返回英超首个球季便取得足总杯亚军。至2011年，西汉姆联再次降落英冠，但在次年再次透过赢取英冠升班附加赛重返英超。</p>
+                <p class="teaminfo">西汉姆联被英格兰媒体誉为“足球学院”（The Academy of Football）。球队为各级国家队输送了多名富有才华的青年球员，是名副其实的“造星工厂”，这一称誉也被俱乐部官方接受和承袭。</p>
+                <p class="teaminfo">西汉姆联将在2016年至2017年英格兰足球超级联赛使用伦敦奥林匹克体育场为新主场。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">布莱顿及霍夫阿尔比恩足球俱乐部<span>Brighton & Hove Albion F.C.</span></p>
+                <p class="teaminfo">是位于英格兰东南部沿海单一管理区布赖顿-霍夫的职业足球俱乐部，故绰号称为“海鸥”，现时在英格兰冠军联赛作赛。</p>
+                <p class="teaminfo">成立于1901年，是南部联赛的创始成员，1920年加入足球联盟，在1979年至1983年间处于顶级的甲级联赛，更于1983年晋身足总杯决赛，在重赛才以0-4负于曼联，但不幸地同年降级乙组。主场为法默尔球场（Falmer Stadium）。</p>
+                <p class="teaminfo">2017年4月17日，布莱顿在主场2-1击败维冈竞技足球俱乐部，提前三轮重返英格兰足球超级联赛，这是“海鸥”自1983年以来首次重返顶级联赛。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">南安普敦足球俱乐部<span>Southampton Football Club</span></p>
+                <p class="teaminfo">原名圣玛丽YMA（StMary's YMA）是英格兰东南部汉普郡港口城市南安普敦的职业足球俱乐部，绰号“圣徒”（The Saints），成立于1885年11月，主场球场小谷球场，使用超过100年后在2001年搬迁到圣玛丽球场。</p>
+                <p class="teaminfo">南安普敦足球俱乐部于2008/09年赛季后由英格兰冠军联赛降级到英格兰足球甲级联赛作赛。10/11赛季球队获得英甲联赛亚军升至英冠联赛。11-12赛季后成功升入英格兰足球超级联赛。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">伯恩茅斯足球俱乐部<span>AFC Bournemouth</span></p>
+                <p class="teaminfo">英格兰西南部多塞特郡海边度假城市伯恩茅斯的职业足球俱乐部，1899年建立，最初的名称是博斯科姆比，1923年更名为伯恩茅斯与博斯科姆比竞技足球俱乐部，1972年改为现在的名称，即 AFC Bournemouth。2007-08赛季后降级到英格兰足球乙级联赛，2009-10赛季后重返英格兰足球甲级联赛。2013-14赛季杀进英冠是他们史上第二次踢英格兰第二级联赛。2014-15赛季英冠第45轮最后一场比赛中，伯恩茅斯以3-0大胜博尔顿，在还剩最后一轮比赛的情况下，领先第3名的米德尔斯堡3分，净胜球还超过米堡多达19球，基本锁定了联赛第2，2015-2016赛季成功升级至英超，这也是伯恩茅斯建队116年来第一次踢英超联赛。</p>
+                <p class="teaminfo">伯恩茅斯在首个在英超联赛作赛的赛季(2015-16赛季)中，取得英超第16名，成功保留在英超的席位。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+            <p class="teamname">斯旺西城足球俱乐部<span>Swansea City AFC</span></p>
+            <p class="teaminfo">是位于威尔士斯旺西的职业足球俱乐部，2010/11获得英格兰足球冠军联赛第三名，附加赛后战胜雷丁后升级到英格兰足球超级联赛比赛。</p>
+            <p class="teaminfo">斯旺西城足球俱乐部是在英格兰联赛系统比赛两支威尔士球队之一，另一队是2013/14赛季升上英超的卡迪夫城，而原本在英乙的雷克斯汉姆则已降级到英格兰足球协会全国联赛。斯旺西城足球俱乐部于1912年成立，自2005年夏季迁往可容纳20,280名观众的自由球场（Liberty Stadium），球迷一般称之为白石球场（White Rock Stadium）。斯旺西城足球俱乐部升级后首季以英超第十一名完成，为同届三队新升班的球队中成绩最好，之後一年，更取得2012/13年度联赛杯冠军，为球会成立百年来取得的首项英格兰杯赛锦标，更因此而首次取得参加欧洲赛资格。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+            <p class="teamname">西布罗姆维奇足球俱乐部<span>West Bromwich Albion Football Club</span></p>
+            <p class="teaminfo">是英格兰西米德兰兹区域西米德兰兹郡桑德韦尔都市自治市西布罗米奇的足球俱乐部，2007/08年赛季夺得英格兰冠军联赛冠军回升英格兰足球超级联赛，仅一年后回降英冠。西布罗姆维奇足球俱乐部于1878年创立，是足球联盟创始成员。主场为山楂球场（The Hawthorns）。2016年8月，中国商人赖国传全资收购西布朗。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">莱斯特城足球俱乐部<span>Leicester City Football Club</span></p>
+                <p class="teaminfo">是一家位于英国英格兰莱斯特城的职业足球俱乐部，现从属于英格兰足球超级联赛。</p>
+                <p class="teaminfo">莱斯特城的前身莱斯特福斯（Leicester Fosse）由维杰斯顿学校的一群旧生团体于1884年创立，1890年加入英格兰足球协会。1894年参加英格兰足球乙级联赛，1919年一战结束后球队更为现名。</p>
+                <p class="teaminfo">莱斯特城历史上曾6次获得英乙联赛（第三级别）冠军、1次获得英甲联赛（第二级别）冠军，3次获得联赛杯冠军。2013-2014赛季，莱斯特城斩获队史首个英格兰冠军联赛冠军，时隔10年再次进入英格兰超级联赛。2016年5月3日，莱斯特城提前两轮夺得2015-2016赛季英超冠军，成为英超联赛第六支冠军球队，同时也是俱乐部建立132年来第一座顶级联赛冠军。</p>
+                <p class="teaminfo">当地时间2017年2月14日，莱斯特城队获得2017年劳伦斯世界体育奖颁奖典礼“最佳体育精神奖”</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">斯托克城足球俱乐部<span>Stoke City Football Club</span></p>
+                <p class="teaminfo">是位于英格兰特伦特河畔斯托克的足球俱乐部。斯托克城被视为仅次于诺茨郡为世界上第二古老的足球联赛俱乐部，成立于1863年，是足球联盟的创始成员。现在英超联赛作赛，主场为不列颠尼亚球场。</p>
+                <p class="teaminfo">曾获得1932-33和1962-63赛季，2次英格兰第三级别联赛的冠军；1971-72赛季，夺得英格兰联赛杯的冠军。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">利物浦足球俱乐部队<span>Liverpool Football Club</span></p>
+                <p class="teaminfo">简称利物浦队，是英格兰足球超级联赛的球队之一。球队位于英格兰西北默西赛德郡港口城市利物浦，于1892年成立，是英格兰的一支足球俱乐部。</p>
+                <p class="teaminfo">利物浦是英格兰足球历史上最成功的俱乐部之一，也是欧洲乃至世界最成功的足球俱乐部之一 。利物浦一共夺取过18次英格兰甲级联赛冠军、7次英格兰足总杯冠军、8次英格兰联赛杯冠军、5次欧洲冠军联赛冠军以及3次欧洲联盟杯冠军，也曾为已解散的G-14创立成员，乃是英格兰历史上最成功的球队之一。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">埃弗顿足球俱乐部<span>Everton Football Club</span></p>
+                <p class="teaminfo">是一家位于英国西北部利物浦的足球俱乐部，于1878年成立（比同市宿敌利物浦早了14年[1]  ，也是足球联盟成立时的创立成员）。俱乐部历史悠久，是英格兰联赛创立者之一。9次获得英格兰顶级联赛冠军，5次足总杯冠军，1次欧洲优胜者杯冠军。现参加英格兰足球超级联赛。</p>
+                <p class="teaminfo">埃弗顿自创立以来曾九次取得英格兰顶级联赛冠军，虽然埃弗顿在英超成立初期成绩一般，经常于护级边缘苦苦挣扎。直到2002年，球队在2004-05勇夺联赛第4名，得到欧洲联赛冠军杯外围赛资格。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">曼彻斯特联足球俱乐部<span>Manchester United</span></p>
+                <p class="teaminfo">位于英国英格兰西北区曼彻斯特郡曼彻斯特市，英文名Manchester United Football Club，简称ManUtd或MUFC，中文简称曼联，其前身“牛顿·希斯”于1878年由兰开夏郡和约克郡铁路公司的工人在牛顿希斯工地上成立。1902年球队改组并改名曼联，现为英格兰足球超级联赛俱乐部，曼联的球队主场为“梦剧场”老特拉福德球场，1910年启用至今。</p>
+                <p class="teaminfo">曼联是英格兰足球史上最为成功的俱乐部之一，也是欧洲乃至世界最具有影响力最成功的球队之一，共获得20次英格兰顶级联赛冠军，12次英格兰足总杯冠军，5次英格兰联赛杯冠军。在欧洲赛场上，曼联共获得3次欧洲冠军联赛冠军，1次欧洲优胜者杯，1次欧洲足联欧洲联赛冠军和1次欧洲超级杯冠军，与尤文图斯、拜仁慕尼黑、阿贾克斯、切尔西并列为欧洲大满贯球队。</p>
+                <p class="teaminfo">2016年5月27日，曼联官方宣布葡萄牙主教练何塞·穆里尼奥将入主老特拉福德，他将成为弗格森爵士退休后曼联所任命的第三任主教练。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">曼彻斯特城足球俱乐部<span>Manchester City Football Club</span></p>
+                <p class="teaminfo">简称“曼城”，绰号“蓝月亮”，口号是Superbia in Proelio，意为“战争的自豪”（Pride in Battle）；位于英国的曼彻斯特，前身为成立于1880年的“圣马可堂”（West Gorton Saint Marks），1887年改名为阿德维克（Ardwick AFC），1894年正式成立曼城足球俱乐部。</p>
+                <p class="teaminfo">2008年曼城被来自中东的阿拉伯财团收购，并夺得2010-11赛季英格兰足总杯冠军，成为曼城近三十五年来首个锦标。2011-12赛季，曼城首次夺得英超联赛冠军，时隔44年重新获得英格兰顶级联赛冠军。2013-14赛季，曼城第二次夺得英格兰超级足球联赛冠军，这也是曼城球队历史的第四个顶级联赛冠军 。</p>
+                <p class="teaminfo">2016年2月曼城俱乐部官方公告瓜迪奥拉将从2016-17赛季开始成为球队的主教练。</p>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div>
+                <p class="teamname">伯恩利足球俱乐部<span>Burnley Football Club</span></p>
+                <p class="teaminfo">是位于英格兰西北部兰开郡伯恩利的职业足球俱乐部。成立于1882年，是英格兰足球联赛创始成员，主场为特夫摩尔球场（Turf Moor）。2008-09赛季获得英冠联赛亚军，升级至英超联赛，2009-10赛季再次降级至英冠联赛。2013-14赛季获得英冠联赛亚军，来届重返英超，2014-15赛季再次降级至英冠联赛，2015-16赛季获得英冠联赛冠军，再度重返英超。</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/pace.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/swiper.animate.min.js"></script>
 <script>
     window.onload = function(){
         var init = setInterval(function() {
             if (!Pace.running) {
                 clearInterval(init);
-                $(window).resize(function(){
-                    $('#page').height('100%');
-                });
-                $('#page').height('100%');
 
-                var swiper = new Swiper('.swiper-container', {
+                var swiper = new Swiper('.swiper-container-v', {
                     onInit: function(swiper){
                         swiperAnimateCache(swiper);
                         swiperAnimate(swiper);
@@ -57,12 +256,74 @@
                     },
                     pagination: '.swiper-pagination',
                     paginationClickable: true,
-                    direction: 'vertical'
+                    direction: 'vertical',
+                    roundLengths : true //防止文字模糊
                 });
+
+                $('.spage2>img').click(function(){
+                    $("#pop").show();
+                    $("#popteam").show();
+                    var i =$(this).attr('data-i');
+                    popFun(i);
+                });
+
+
+                //弹层展示
+                function popFun(i){
+                    var popteam = new Swiper('#popteam', {
+                        /*effect: 'fade',
+                        fade: {
+                            crossFade: true,
+                        },*/
+                        effect : 'coverflow',
+                        slidesPerView: 1,
+                        centeredSlides: true,
+                        coverflow: {
+                            rotate: 30,
+                            stretch: 10,
+                            depth: 60,
+                            modifier: 2
+                        },
+                        speed:200,
+                        loop: true,
+                        onInit: function (swiper) {
+                            swiperAnimateCache(swiper);
+                            swiperAnimate(swiper);
+                        },
+                        onTransitionEnd: function (swiper) {
+                            swiperAnimate(swiper);
+                        },
+                    });
+                    popteam.slideTo(i, 0);
+                    $('.shand').show();
+                    //切换 sp
+                    $(".btnr").on("click", function () {
+                        popteam.slideNext();
+                    });
+                    $(".btnl").on("click", function () {
+                        popteam.slidePrev();
+                    });
+                    $("#popteam .close").on("click", function () {
+                        $("#popteam").hide();
+                        $('.spage2>img').each(function(){$(this).css('visibility','visible');});
+                        $('.shand').hide();
+                    });
+                }
+
+                $('.tit3').click(function(){
+                    swiper.slideNext();
+                })
+
 
             }
         },100);
     }
+    $(function(){
+
+
+
+
+    });
 </script>
 </body>
 </html>
